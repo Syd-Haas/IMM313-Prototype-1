@@ -1,18 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactables : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // when you press the bell - it activates the color change script //
+    private void OnMouseDown()
     {
-        
-    }
+        Collider collider = GetComponent<Collider>();
+            
+        //This code calls the changecolor function//
+        ColorChange initiator;
+        initiator = gameObject.AddComponent<ColorChange>();
+        initiator.ChangeColor(Color.green);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
+    
 }

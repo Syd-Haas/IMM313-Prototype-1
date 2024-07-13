@@ -10,10 +10,7 @@ using Random = System.Random;
 public class ColorChange : MonoBehaviour
 {
    // This script when placed on a game object will randomly update the material color and light color of the object per frame//
-   public void Update()
-   {
-      ChangeColor(newColor: Color.red);
-   }
+   
    public void ChangeColor(Color newColor)
    {
       Renderer renderer = GetComponent<Renderer>();
