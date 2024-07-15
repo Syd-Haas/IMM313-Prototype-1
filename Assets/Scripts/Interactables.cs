@@ -5,16 +5,24 @@ using UnityEngine;
 
 public class Interactables : MonoBehaviour
 {
-    // when you activate the pressure plate; it then activates the color changing script //
-    private void OnCollisionEnter()
+    // when you press the plate - it activates the color change script //
+    private void OnCollisionEnter(Collision other)
     {
-        Collider collider = GetComponent<Collider>();
-            
-        //This code calls the changecolor function//
-        ColorChange initiator;
-        initiator = gameObject.AddComponent<ColorChange>();
-        initiator.ChangeColor(Color.green);
+      if (other.gameObject.CompareTag("Player"))
+      { 
+          RunChangeColor();
+      }
 
+      void RunChangeColor()
+      {
+          Collider collider = GetComponent<Collider>();
+          ColorChange initiator;
+          initiator = gameObject.AddComponent<ColorChange>();
+          initiator.ChangeColor(Color.green);
+                
+          Debug.Log("Change color has run");
+
+      }
     }
     
 }
