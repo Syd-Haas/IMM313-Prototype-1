@@ -9,20 +9,24 @@ using Random = System.Random;
 
 public class ColorChange : MonoBehaviour
 {
-   // This script when placed on a game object will randomly update the material color and light color of the object per frame//
-   
+   //This script when placed on a game object will randomly update the material color of the object per frame//
+
+   public void Update()
+   {
+      ChangeColor(Color.green);
+   }
+
    public void ChangeColor(Color newColor)
    {
       Renderer renderer = GetComponent<Renderer>();
-      Light light = GetComponent<Light>();
 
-      newColor = UnityEngine.Random.ColorHSV();
-
-      renderer.material.color = newColor;
-      light.color = newColor;
+      if (renderer != null)
+      {
+         newColor = UnityEngine.Random.ColorHSV(); 
+         renderer.material.color = newColor;
+      }
       
-
-      //Debug.Log("The code has run :)");
+      Debug.Log("The code has run :)");
    }
     
     
