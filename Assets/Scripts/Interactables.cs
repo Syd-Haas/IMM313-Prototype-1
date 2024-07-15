@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Interactables : MonoBehaviour
 {
-    // when you press the bell - it activates the color change script //
-    private void OnMouseDown()
+    // when you activate the pressure plate; it then activates the color changing script //
+    private void OnCollisionEnter()
     {
         Collider collider = GetComponent<Collider>();
             
